@@ -1,0 +1,11 @@
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\Test.exe.config
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\Test.exe
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\Test.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\PDFLibrary.dll
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\itextsharp.dll
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\PDFLibrary.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\itextsharp.xml
+c:\code\lab\PDFGenerator\PDFGenerator\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+c:\code\lab\PDFGenerator\PDFGenerator\Test\obj\Debug\Test.exe
+c:\code\lab\PDFGenerator\PDFGenerator\Test\obj\Debug\Test.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\Test\bin\Debug\itextsharp.xmlworker.dll

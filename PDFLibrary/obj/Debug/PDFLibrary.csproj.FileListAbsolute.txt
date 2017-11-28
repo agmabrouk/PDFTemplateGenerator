@@ -1,0 +1,11 @@
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\PDFLibrary.dll
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\PDFLibrary.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\itextsharp.dll
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\itextsharp.xmlworker.dll
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\itextsharp.xml
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\obj\Debug\PDFLibrary.csprojResolveAssemblyReference.cache
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\obj\Debug\PDFLibrary.dll
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\obj\Debug\PDFLibrary.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.dll
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.pdb
+c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.xml
