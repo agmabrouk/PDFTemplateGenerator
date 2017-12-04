@@ -15,23 +15,23 @@ namespace Test
 
             TemplateBodyItem bodyitem1 = new TemplateBodyItem()
             {
-                order = 1,
+                Order = 1,
                 Content = "hello world",
-                visible = true,
+                Visible = true,
             };
 
             TemplateBodyItem bodyitem2 = new TemplateBodyItem()
             {
-                order = 1,
+                Order = 1,
                 Content = "hello world",
-                visible = true,
+                Visible = true,
             };
 
             TemplateBodyItem bodyitem3 = new TemplateBodyItem()
             {
-                order = 1,
+                Order = 1,
                 Content = "السح اندح امبو",
-                visible = true,
+                Visible = true,
             };
 
             TemplateBody body = new TemplateBody()

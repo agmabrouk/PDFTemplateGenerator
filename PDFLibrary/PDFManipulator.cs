@@ -97,10 +97,10 @@ namespace PDFLibrary
         private void fillParamList(List<string> @params, TemplateBody body)
         {
             @params.Add(body.Header);
-            body.BodyItems.OrderBy(x => x.order);
+            body.BodyItems.OrderBy(x => x.Order);
             foreach (var item in body.BodyItems)
             {
-                if (item.visible) @params.Add(item.Content.ToString());
+                if (item.Visible) @params.Add(item.Content.ToString());
             }
             @params.Add(body.Footer);
         }
