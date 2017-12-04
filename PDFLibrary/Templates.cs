@@ -13,6 +13,34 @@ namespace PDFLibrary
         SaudiCertificate,
     }
 
+    public interface IPDFTemplate
+    {
+
+
+    }
+
+    public class LicenseRequestTemplate : IPDFTemplate
+    {
+
+
+
+    }
+
+    public class AssenseRequestTemplate : IPDFTemplate
+    {
+
+
+
+    }
+
+
+    public class SaudiCertificateTemplate : IPDFTemplate
+    {
+
+
+
+    }
+
     public class TemplateBody
     {
         public String Header { get; set; }
@@ -20,11 +48,17 @@ namespace PDFLibrary
         public String Footer { get; set; }
     }
 
+    public class TemplateProperties
+    {
+
+
+
+    }
 
     public class TemplateBodyItem
     {
-        public bool visible { get; set; }
-        public int order { get; set; }
+        public bool Visible { get; set; }
+        public int Order { get; set; }
         public String Content { get; set; }
     }
 

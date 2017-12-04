@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System;
@@ -17,7 +18,6 @@ namespace PDFLibrary
 {
     public class PDFManipulator : IPDFManipulator
     {
-
         public static void GeneratePDF()
         {
 
@@ -37,8 +37,6 @@ namespace PDFLibrary
             BaseFont bfArialUniCode = BaseFont.CreateFont(ArialFontFile, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             //Create a font from the base font 
             Font font = new Font(bfArialUniCode, 12);
-
-
             //Use a table so that we can set the text direction 
             var table = new PdfPTable(1)
             {
@@ -78,12 +76,8 @@ namespace PDFLibrary
             AcrobatReader.StartInfo.FileName = PDFFileName;
             AcrobatReader.Start();
         }
-
-
         public void GeneratePDFFromString()
         {
-
-
         }
         public bool GeneratePDFFromTemplate(PDFTemplate TemplateType, TemplateBody Body)
         {
@@ -93,21 +87,13 @@ namespace PDFLibrary
             fillParamList(Params, Body);
             string StringWithParam = string.Format(@TemplateContent, Params.ToArray());
             var TemplateCss = File.ReadAllText(gtTemplateCSS(TemplateType));
-
-
-
             ExportHTMLToPDF(StringWithParam, @"C:\", TemplateCss);
-            //var doc = new HtmlDocument();
-            //doc.Load(TemplatePath);
-            //var node = doc.DocumentNode.SelectSingleNode("//body");
             return true;
         }
-
         private string gtTemplateCSS(PDFTemplate templateType)
         {
             return @"C:\Styles.css";
         }
-
         private void fillParamList(List<string> @params, TemplateBody body)
         {
             @params.Add(body.Header);
@@ -118,44 +104,54 @@ namespace PDFLibrary
             }
             @params.Add(body.Footer);
         }
-
         private string getTemplatePath(PDFTemplate templateType)
         {
             return @"C:\Template1.html";
         }
-
         public void ExportHTMLToPDF(String HTMLString, String OutputPath, string Css)
         {
-            Document pdfDoc = new Document(PageSize.LETTER, 70, 55, 40, 25);//new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+            Document pdfDoc = new Document(PageSize.A4, 70, 55, 40, 25);//new Document(PageSize.A4, 10f, 10f, 10f, 0f);
             Random ran = new Random();
             string PDFFileName = string.Format(@"{1}Test{0}.Pdf", ran.Next(), OutputPath);
-            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, new FileStream(PDFFileName, FileMode.Create));
-            pdfDoc.Open();
-            pdfDoc.NewPage();
 
-            var table = new PdfPTable(1)
+            Byte[] bytes;//in case return file stream 
+
+            using (var ms = new MemoryStream())
             {
-                RunDirection = PdfWriter.RUN_DIRECTION_RTL,
-            };
-            table.DefaultCell.NoWrap = false;
-            pdfDoc.Add(table);
-            using (var msCss = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Css)))
-            {
-                using (var msHtml = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(HTMLString)))
+                using (var doc = new Document(PageSize.A4, 70, 55, 40, 25))
                 {
-                    iTextSharp.tool.xml.XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, msHtml, msCss, System.Text.Encoding.Unicode, new Fontawy());
+                   // doc.SetPageSize(PageSize.A4.Rotate());
+
+                    using (PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(PDFFileName, FileMode.Create)))
+                    {
+                        doc.Open();
+
+                        //Get a stream of our HTML
+                        using (var msHTML = new MemoryStream(Encoding.UTF8.GetBytes(HTMLString)))
+                        {
+
+                            //Get a stream of our CSS
+                            using (var msCSS = new MemoryStream(Encoding.UTF8.GetBytes(Css)))
+                            {
+
+                                XMLWorkerHelper.GetInstance().ParseXHtml(writer, doc, msHTML, msCSS, Encoding.UTF8, new Fontawy());
+                            }
+                        }
+
+                        doc.Close();
+                    }
                 }
+
+                //bytes = ms.ToArray();
             }
-
             
-
-            pdfDoc.Close();
-
             Process AcrobatReader = new Process();
             AcrobatReader.StartInfo.FileName = PDFFileName;
             AcrobatReader.Start();
         }
     }
+
+
 
 
     public class Fontawy : IFontProvider

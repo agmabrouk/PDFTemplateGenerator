@@ -9,3 +9,14 @@ c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\obj\Debug\PDFLibrary.pdb
 c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.dll
 c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.pdb
 c:\code\lab\PDFGenerator\PDFGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.xml
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\PDFLibrary.dll
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\PDFLibrary.pdb
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.dll
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\itextsharp.dll
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\itextsharp.xmlworker.dll
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.pdb
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\HtmlAgilityPack.xml
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\bin\Debug\itextsharp.xml
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\obj\Debug\PDFLibrary.csprojResolveAssemblyReference.cache
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\obj\Debug\PDFLibrary.dll
+C:\Code\GH\PDFTemplateGenerator\PDFLibrary\obj\Debug\PDFLibrary.pdb
